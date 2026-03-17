@@ -1,0 +1,9 @@
+network:
+  version: 2
+  ethernets:
+    interface-name:
+      addresses:
+        - 10.0.2.x/29
+      gateway4: 10.0.2.1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
