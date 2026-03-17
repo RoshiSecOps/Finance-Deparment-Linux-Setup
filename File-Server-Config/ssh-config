@@ -1,0 +1,8 @@
+## This is the key options that are enabled/disabled on the file server
+
+#SSH
+PermitRootLogin no
+PasswordAuthentication no
+
+---
+
