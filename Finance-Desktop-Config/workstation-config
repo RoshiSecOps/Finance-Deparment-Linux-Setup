@@ -8,6 +8,26 @@ Installed Packages:
 Systemd:
 
 /etc/systemd/system/mnt-finance.mount
+# Variables are generalised for security reasons
+#This systemd service should mount the remote fs via sshfs upon network online
+#It is good to note that we forced the server via the sftp_server option visible
+#at the end of options
+
+[Unit]
+Description=SSHFS mount for remote data
+After=network-online.target
+Wants=network-online.target
+Before=remote-fs.target
+
+[Mount]
+What=user@your_other_server:/home/user/Finance
+Where=/mnt/finance
+Type=fuse.sshfs
+Options=allow_other,default_permissions,compression=yes,cache=yes,auto_cache,reconnect,IdentityFile=/home/user/.ssh/id_rsa,sftp_server=/usr/lib/openssh/sftp-server
+
+[Install]
+WantedBy=multi-user.target
+
 # Mount unit in systemd to mount on startup
 
 
