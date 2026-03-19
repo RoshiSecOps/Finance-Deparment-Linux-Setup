@@ -1,0 +1,14 @@
+# This is the SSH config file located in ~/.ssh/config
+
+# I've created it in the following manner
+
+Host <name-of-host>
+	HostName <remote-ip>
+	User <user-to-login-as>
+	PubKeyAuthentication yes
+	IdentityFile <path/to/key>
+	ServerAliveInterval 15
+    	ServerAliveCountMax 3
+    	Compression yes
+    	ForwardAgent no
+    	ForwardX11 no

@@ -1,0 +1,13 @@
+# Workstation Configuration for Finance Department
+
+Installed Packages:
+
+- sshfs
+  - Used to mount SFTP FS
+
+Systemd:
+
+/etc/systemd/system/mnt-finance.mount
+# Mount unit in systemd to mount on startup
+
+
