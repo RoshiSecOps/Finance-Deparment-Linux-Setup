@@ -8,7 +8,7 @@ This project consists of the following:
 - Firewall-Config directory, including the firewall rules and configurations per VM.
 - File-Server-Config, including how the file server is setup to serve, backup, replicate its data.
 - Backup-Server-Config, including how the backup server stores, compresses and archives the data.
-- Bash-Scripts, any script that has been used for the scenario.
+- Finance-Desktop-Config, includes systemd service and ssh-conf.
 
 Project Goal: Practice system, network, firewall configuration and Systemd scheduled jobs for major tasks and cronjobs for less impactful ones. The idea is to finish this project with more confidence in system administration.
 
@@ -20,11 +20,10 @@ Project Goal: Practice system, network, firewall configuration and Systemd sched
         - User Management
         - Group Management
         - Adequate Permissions Setup
-        - Password Policy enabled
         - Mounting external network drives
         - Connecting to remote network services
         - Package Management
-        - Managing Volumes, Partitions and Mounts
+        - Systemd Custom Service Setup
 
 - One Server Virtual Machine used to access required monthly data by Finance Department
     - The following should be exercised here:
@@ -34,7 +33,6 @@ Project Goal: Practice system, network, firewall configuration and Systemd sched
         - SSH Setup and Hardening
         - Firewall Configuration
         - Package Management
-        - Systemd configuration with Timers
         - Scheduled Tasks with cronjob
 
 - One more Server Virtual Machine used to store archived data as a backup of the primary server
@@ -45,5 +43,4 @@ Project Goal: Practice system, network, firewall configuration and Systemd sched
         - Firewall Configuration
         - Package Management
         - SSH Setup and Hardening
-        - Systemd configuration with Timers
         - Scheduled Tasks with cronjob
