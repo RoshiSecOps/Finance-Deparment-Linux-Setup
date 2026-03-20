@@ -1,0 +1,21 @@
+### Firewall rules for each VM via firewalld
+
+
+# Storage Server (10.0.2.3)
+
+sudo firewall-cmd --permanent --zone=public --remove-service-ssh
+
+sudo firewall-cmd --permanent --zone=public\
+	--add-rich-rule='rule family="ipv4" source address="10.0.2.5" service name="ssh" accept'
+sudo firewall-cmd --permanent --zone=public\
+        --add-rich-rule='rule family="ipv4" source address="10.0.2.4" service name="ssh" accept'
+sudo firewall-cmd --reload
+
+
+# Backup Server (10.0.2.4)
+
+sudo firewall-cmd --permanent --zone=public --remove-service=ssh
+sudo firewall-cmd --permanent --zone=public\
+        --add-rich-rule='rule family="ipv4" source address="10.0.2.5" service name="ssh" accept'
+
+# Finance Workstation - leave default
